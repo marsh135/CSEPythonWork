@@ -1,0 +1,21 @@
+class Movie:
+    def __init__(self, title, runTime, rating):
+        self.title =  title
+        self.runTime = runTime
+        self.rating = rating
+
+    def __str__(self):
+        return f"Title: {self.title}, Runtime: {self.runTime}, Rating: {self.rating}"
+    
+movie1 = Movie("Star Wars",  93, "PG")
+movie2 = Movie("Garden State", 104, "R")
+movie3 = Movie("Iron Man", 122, "PG-13")
+
+
+print(movie1)
+print(movie2)
+print(movie3)
+print("-"*20)
+movie1.rating = "G"
+print("-"*20)
+print(movie1)
