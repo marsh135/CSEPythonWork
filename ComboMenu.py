@@ -1,3 +1,5 @@
+#shoutout Johnson Chen
+
 def menu(items):
     for i in range(len(items)):
         print(i, items[i])
