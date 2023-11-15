@@ -13,6 +13,7 @@ def menu(items):
 done = False
 total = 0
 orderNum = 1
+order = []
 while(not done):
     
     sandwiches = ['no', 'chicken', 'beef', 'tofu' ]
@@ -21,6 +22,7 @@ while(not done):
     dcost = [0, 1.00, 1.75, 2.25]
     fries =  ['no', 'small', 'medium', 'large']
     fcost = [0, 1.00, 1.50, 2.00]
+    order.append(orderNum)
     print("Choose a sandwich: "); print()
     schoice =  menu(sandwiches)
     print("-"*20)
@@ -35,11 +37,13 @@ while(not done):
         total+=scost[schoice]
         print(f"Your total is ${total:.2f}"); print()
         print()
+        order.append(sandwiches[schoice])
     if(dchoice !=0):
         print(f"You chose a {drinks[dchoice]} drink. The cost is ${dcost[dchoice]:.2f}")
         total+=dcost[dchoice]
         print(f"Your total is ${total:.2f}"); print()
         print()
+        order.append(drinks[dchoice])
     if(fchoice !=0):
         print(f"You chose a {fries[fchoice]} fry. The cost is ${fcost[fchoice]:.2f}")
         if(fchoice == 1):
@@ -51,6 +55,7 @@ while(not done):
         total+=fcost[fchoice]
         print(f"Your total is ${total:.2f}"); print()
         print()
+        order.append(fries[fchoice])
     #print(f"Your total is ${total:.2f}"); print()
     if(schoice!=0 and dchoice!=0 and fchoice!=0):
         print("-"*20)
@@ -61,9 +66,7 @@ while(not done):
 
     total = total + (kp*.25)
     print("-"*20)
-    order = [orderNum, sandwiches[schoice], drinks[dchoice], fries[fchoice], kp]
-    print(f"Items in order {orderNum}: {order[1]} sandwich, {order[2]} drink, {order[3]} fries, and {order[4]} ketchup packets" )
-
+    print(f"Items in {orderNum}: Sandwich: {order[1]} Drink: {order[2]} Fries: {order[3]} Ketchup:{order[4]} ")
     #print(f"Items in order {orderNum}: {order[orderNum+1]} sandwich, {order[orderNum+2]} drink, {order[orderNum+3]} fries, and {order[orderNum+4]} ketchup packets" )
     more = input("Another item? (Y/N)").strip().upper()
     if(more == 'N'):
@@ -71,11 +74,7 @@ while(not done):
         print();print()
     else:
         orderNum+=1
-        order.append(orderNum)
-        order.append(sandwiches[schoice])
-        order.append(drinks[dchoice])
-        order.append(fries[fchoice])
-        order.append(kp)
+        
 
 print(f"Thank you for your order. Your total is ${total:.2f}.")
 print(f"Items in order:{order}" )
