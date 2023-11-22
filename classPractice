@@ -16,6 +16,7 @@ print(movie1)
 print(movie2)
 print(movie3)
 print("-"*20)
+#change an item about the class``
 movie1.rating = "G"
 print("-"*20)
 print(movie1)
