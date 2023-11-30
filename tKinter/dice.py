@@ -23,7 +23,7 @@ root.rowconfigure([0,1], minsize=50, weight=1)
 btn_roll = tk.Button( text="Roll",  command= rng)
 #btn_roll.pack()
  
-lbl_result1 =  tk.Label( text="", relief="raised",font=font_tuple)
+lbl_result1 =  tk.Label( text="", relief="raised", width=10, height=5,font=font_tuple)
 lbl_result2 =  tk.Label( text="", relief="raised", width=10, height=5, font=font_tuple)
 #lbl_result.pack()
 
