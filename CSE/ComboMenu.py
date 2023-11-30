@@ -66,7 +66,6 @@ while(not done):
 
     total = total + (kp*.25)
     print("-"*20)
-    print(f"Items in {orderNum}: Sandwich: {order[1]} Drink: {order[2]} Fries: {order[3]} Ketchup:{order[4]} ")
     #print(f"Items in order {orderNum}: {order[orderNum+1]} sandwich, {order[orderNum+2]} drink, {order[orderNum+3]} fries, and {order[orderNum+4]} ketchup packets" )
     more = input("Another item? (Y/N)").strip().upper()
     if(more == 'N'):
