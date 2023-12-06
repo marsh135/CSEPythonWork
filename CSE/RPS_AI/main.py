@@ -36,7 +36,7 @@ importlib.reload(team6)
 # The first argument of round_robin() specifies the number of 
 # rounds to be played by each pair of strategies. 
 # Change the other arguments to use more teams, fewer teams, or different teams
-short_report, long_report = psrock.round_robin(10, team1, team2, team3, team4, team5, team6)        
+short_report, long_report = psrock.round_robin(200000, team1, team2, team3, team4, team5, team6)        
 
 for team in long_report:
     print('-'*80)

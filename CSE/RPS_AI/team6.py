@@ -1,18 +1,19 @@
-'''The function move(my_history, their_history) must return 'r', 'p', or 's'.
-my_history and their_history are strings of the same length, perhaps length zero.
+'''Our function starts out choosing paper. 
+If we win, we stay with paper. If we lose, we change to a random choice
+of either rock or scissors.
 '''
 import random
-strategy_name = 'winStayLoseShift'
+strategy_name = 'Pulley-Marsh-WinStayLoseShift'
+
+
 
 def move(my_history, their_history):
     if len(their_history)==0: #start with paper
        my_move = 'p' 
+    elif(their_history[-1] == 'r'):
+        my_move = 'p'  
     else:
-        #if they choose rock, I lose, otherwise, I win/tie
-        if(their_history[-1] != "r"):
-            my_move = 'p'
-        else:
-            my_move = random.choice(["r", "s"]) 
+        my_move = random.choice(['r', 's']) 
     return my_move
     
 
