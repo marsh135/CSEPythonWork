@@ -1,4 +1,8 @@
-'''Our function starts out choosing paper. 
+'''
+Lisa Pulley, Kyle Marsh
+CSE Fall 2023
+
+Our function starts out choosing paper. 
 If we win, we stay with paper. If we lose, we change to a random choice
 of either rock or scissors.
 '''
