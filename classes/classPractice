@@ -18,12 +18,6 @@ print("-"*20)
 '''
 print("-"*20)
 
-
-
-
-
-
-
 class Food:
     def __init__(self,name,  price, calories, fats):
         self.name =  name
@@ -35,6 +29,12 @@ class Food:
         return f"Name: {self.name}   Price: {self.price}   Calories: {self.calories}   Fats: {self.fats}"
 
 fries =  Food("Fries", 3.49, 550, 12)
+
+
 pizza =  Food("Pizza", 3.29, 250, 25)
-print(fries)
-print(pizza)
+taco =  Food("Tacos", 1.29, 220, 16)
+
+
+
+print(str(fries.fats))
+
