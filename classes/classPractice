@@ -36,5 +36,6 @@ taco =  Food("Tacos", 1.29, 220, 16)
 
 
 
-print(str(fries.fats))
-
+print(fries)
+print(pizza)
+print(taco)

@@ -10,8 +10,6 @@ import random
 strategy_name = 'Pulley-Marsh-WinStayLoseShift'
 
 
-
-
 def move(my_history, their_history):
     if len(their_history)==0: #start with paper
        my_move = 'p' 
