@@ -5,7 +5,7 @@ root =  tk.Tk()
 def handle_keypress(event):
     print(event.char)
 
-root.bind("<Key>", handle_keypress)
+root.bind("<a>", handle_keypress)
 
 def handle_click(event):
     print("The button was clicked!")
