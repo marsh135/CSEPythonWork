@@ -1,12 +1,13 @@
-'''Our function starts out choosing paper. 
+'''
+Lisa Pulley, Kyle Marsh
+CSE Fall 2023
+
+Our function starts out choosing paper. 
 If we win, we stay with paper. If we lose, we change to a random choice
 of either rock or scissors.
 '''
 import random
 strategy_name = 'Pulley-Marsh-WinStayLoseShift'
-
-#This is a change
-
 
 
 def move(my_history, their_history):
