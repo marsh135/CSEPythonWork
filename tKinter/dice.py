@@ -8,9 +8,6 @@ import random
 
 font_tuple = ("Times New Roman", 20, "bold")
 def rng():
-    #roll =  random.randint(0,6)
-    #lbl_result = f"{roll}"
-
     lbl_result1["text"] =  str(random.randint(1,6))
     lbl_result2["text"] =  str(random.randint(1,6))
 
@@ -23,8 +20,8 @@ root.rowconfigure([0,1], minsize=50, weight=1)
 btn_roll = tk.Button( text="Roll",  command= rng)
 #btn_roll.pack()
  
-lbl_result1 =  tk.Label( text="", relief="raised", width=10, height=5,font=font_tuple)
-lbl_result2 =  tk.Label( text="", relief="raised", width=10, height=5, font=font_tuple)
+lbl_result1 =  tk.Label( text="", relief="groove", width=10, height=5,font=font_tuple)
+lbl_result2 =  tk.Label( text="", relief="groove", width=10, height=5, font=font_tuple)
 #lbl_result.pack()
 
 btn_roll.grid(row = 0, columnspan=2, sticky="nsew")
