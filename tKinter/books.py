@@ -1,13 +1,15 @@
 import random
 
 class Book:
-    def __init__(self, title, author, genre):
+    def __init__(self, title, author, genre, rating, fnf):
         self.title = title
         self.author = author
         self.genre = genre
+        self.rating = rating
+        self.fnf = fnf
 
     def __str__(self):
-        return f"{self.title} by {self.author} ({self.genre})"
+        return f"{self.genre}: {self.title} by {self.author} "
 
 class BookRecommendation:
     def __init__(self):
@@ -30,14 +32,16 @@ class BookRecommendation:
             return random.choice(self.books)
 
 # Example usage:
-book1 = Book("The Great Gatsby", "F. Scott Fitzgerald", "Classic")
-book2 = Book("To Kill a Mockingbird", "Harper Lee", "Fiction")
-book3 = Book("1984", "George Orwell", "Dystopian")
+book1 = Book("The Great Gatsby", "F. Scott Fitzgerald", "Classic", 4, "Fiction")
+book2 = Book("To Kill a Mockingbird", "Harper Lee", "Classic", 3, "Fiction")
+book3 = Book("1984", "George Orwell", "Dystopian", 4, "Fiction")
+book4 = Book("Long Way Down", "Jason Reynolds", "Fiction", 5, "Fiction")
 
 recommendation_system = BookRecommendation()
 recommendation_system.add_book(book1)
 recommendation_system.add_book(book2)
 recommendation_system.add_book(book3)
+recommendation_system.add_book(book4)
 
 # Get user input for preferred genre
 preferred_genre = input("Enter your preferred genre (or press Enter to get a random suggestion): ")
