@@ -1,6 +1,6 @@
 import random
 import string
-
+print("Computer Science 2024")
 pwLen =  int(input("How many characters for your password?: "))
 
 print('''Choose characters set for the password:
