@@ -12,8 +12,9 @@ def choices(items):
 
 
 def choose_character(char):
+    playerNumber = 1
     for item in range(numPlayers):
-        playerNumber = 1
+        
         #print(f"Player {numPlayers} ")
         chosenCharacters = []
         print(characters)
