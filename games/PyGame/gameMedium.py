@@ -19,7 +19,6 @@ class Player:
 
 width = 800
 height = 600
-test = False
 
 screen = pygame.display.set_mode((width, height))
 
