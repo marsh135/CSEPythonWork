@@ -44,18 +44,50 @@ screen =  pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("PONG!")
 
 #create paddles
-paddleRed =  Paddle(20, 0, 10, 100, 10, RED)
-paddleBlue =  Paddle(SCREEN_WIDTH-30, 0, 10, 100, 10, BLUE)
+paddleRed =  Paddle(20, 0, 3, 100, 10, RED)
+paddleBlue =  Paddle(SCREEN_WIDTH-30, 0, 3, 100, 10, BLUE)
 
 
 running =  True
 
+paddle1YFac = 0
+paddle2YFac = 0
+
 
 while running:
+
     screen.fill(BLACK)
+
+    #Event Handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key ==  pygame.K_UP:
+                paddle2YFac = -1
+            if event.key ==  pygame.K_DOWN:
+                paddle2YFac = 1
+            if event.key ==  pygame.K_w:
+                paddle1YFac = -1
+            if event.key ==  pygame.K_s:
+                paddle1YFac = 1
+            if event.key ==  pygame.K_ESCAPE:
+                running =  False
+        if event.type == pygame.KEYUP:
+            if event.key ==  pygame.K_UP:
+                paddle2YFac = 0
+            if event.key ==  pygame.K_DOWN:
+                paddle2YFac = 0
+            if event.key ==  pygame.K_w:
+                paddle1YFac = 0
+            if event.key ==  pygame.K_s:
+                paddle1YFac = 0
+            
+    paddleRed.update(paddle1YFac)
+    paddleBlue.update(paddle2YFac)
+
+    paddleRed.display()
+    paddleBlue.display()
 
     pygame.display.flip()
 
