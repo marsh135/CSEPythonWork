@@ -78,7 +78,8 @@ class Ball:
         self.xpos =  SCREEN_WIDTH//2
         self.ypos =  SCREEN_HEIGHT//2
         self.xFac *=-1
-        self.yFac *=-1
+        self.yFac *=1
+        self.firstPlay = 1
 
     def hit(self):
         self.xFac = self.xFac * -1
@@ -168,6 +169,11 @@ while running:
     paddleRed.display()
     paddleBlue.display()
     ball.display()
+
+    paddleRed.displayScore("Red Score: ", redScore, 100, 20, WHITE)
+    paddleBlue.displayScore("Blue Score: ", blueScore, SCREEN_WIDTH-100, 20, WHITE)
+
+
 
     pygame.display.update()
     clock.tick(FPS)
