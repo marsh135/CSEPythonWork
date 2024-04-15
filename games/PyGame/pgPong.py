@@ -1,6 +1,8 @@
 import pygame
 pygame.init()
 
+scoreFont =  pygame.font.Font('freesansbold.ttf', 20)
+
 class Paddle:
     def __init__(self, x, y,speed, h, w, rgb):
         self.x =  x
@@ -25,6 +27,14 @@ class Paddle:
         elif self.y  + self.h >= SCREEN_HEIGHT:
             self.y = SCREEN_HEIGHT - self.h
         self.paddleRect = (self.x, self.y, self.w, self.h)
+    
+    def displayScore(self, text, score, x, y, color):
+        text = scoreFont.render(text+str(score), True, color)
+        textRect =  text.get_rect()
+        textRect.center = (x,y)
+
+        screen.blit(text, textRect)
+
     def getRect(self):
         return self.paddleRect
 
@@ -42,7 +52,6 @@ class Ball:
         self.ball =  pygame.draw.circle(
             screen, self.color, (self.xpos, self.ypos), self.radius)
         
-        #we will come back to this (maybe)
         self.firstPlay = 1
     
     def display(self):
@@ -55,6 +64,15 @@ class Ball:
 
         if self.ypos <=0  or self.ypos>= SCREEN_HEIGHT:
             self.yFac = self.yFac* -1
+
+        if self.xpos <0 and self.firstPlay:
+            self.firstPlay = 0
+            return 1
+        elif self.xpos >= SCREEN_WIDTH and self.firstPlay:
+            self.firstPlay = 0
+            return -1
+        else:
+            return 0
     
     def reset(self):
         self.xpos =  SCREEN_WIDTH//2
@@ -93,12 +111,13 @@ paddleList = [paddleRed, paddleBlue]
 #create ball
 ball =  Ball(SCREEN_WIDTH//2, SCREEN_HEIGHT//2, 7, 7, WHITE)
 
-
-
 running =  True
 
 paddle1YFac = 0
 paddle2YFac = 0
+
+redScore = 0
+blueScore =  0
 
 
 while running:
@@ -136,13 +155,21 @@ while running:
 
     paddleRed.update(paddle1YFac)
     paddleBlue.update(paddle2YFac)
-    ball.update()
+    point = ball.update()
+
+    if point == -1:
+        redScore+=1
+    elif point == 1:
+        blueScore+=1
+    
+    if point:
+        ball.reset()
 
     paddleRed.display()
     paddleBlue.display()
     ball.display()
 
-    pygame.display.flip()
+    pygame.display.update()
     clock.tick(FPS)
 
 
