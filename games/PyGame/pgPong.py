@@ -43,7 +43,7 @@ class Ball:
             screen, self.color, (self.xpos, self.ypos), self.radius)
         
         #we will come back to this (maybe)
-        #self.firstPlay = 1
+        self.firstPlay = 1
     
     def display(self):
         self.ball = pygame.draw.circle(
