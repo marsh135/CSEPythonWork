@@ -8,13 +8,12 @@ class csStudents:
     def __str__(self):
         return f"{self.grade}  - {self.lName}, {self.fName}"
 
-rb =  csStudents("Richie", "Boice", "sophomore")
-rb1 =  csStudents("Riley", "Bice", "sophomore")
-ll =  csStudents("Lee", "Lehtomaki", "sophomore")
-eh =  csStudents("Ethan", "Holmes", "freshman")
-lc =  csStudents("Logan", "Church", "senior")
-ta =  csStudents("Thomas", "Ames", "freshman")
+rb =  csStudents("Richie", "B", "sophomore")
+rb1 =  csStudents("Riley", "B", "sophomore")
+ll =  csStudents("Lee", "L", "sophomore")
+eh =  csStudents("E", "H", "freshman")
+lc =  csStudents("Logan", "C", "senior")
+ta =  csStudents("T", "A", "freshman")
 
 
 
-print(rb)
