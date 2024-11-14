@@ -1,3 +1,5 @@
+
+
 class Assignment:
     def __init__(self, name, pointsE, pointsP, weight):
         self.name = name
